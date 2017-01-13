@@ -1,0 +1,31 @@
+$---------------------------------------------------------------------MDI_HEADER
+[MDI_HEADER]
+FILE_TYPE  =  'rdf'
+FILE_VERSION  =  5.00
+FILE_FORMAT  =  'ASCII'
+(COMMENTS)
+{comment_string}
+'flat 2d contact road for testing purposes'
+$--------------------------------------------------------------------------UNITS
+[UNITS]
+ LENGTH             = 'meter'
+ FORCE              = 'newton'
+ ANGLE              = 'radians'
+ MASS               = 'kg'
+ TIME               = 'sec'
+$--------------------------------------------------------------------------MODEL
+[MODEL]
+ METHOD             = '2D'
+ FUNCTION_NAME      = 'ARC901'
+ ROAD_TYPE          = 'flat'
+$-----------------------------------------------------------------------GRAPHICS
+[GRAPHICS]
+ LENGTH             = 1.0
+ WIDTH              = 1.0
+ NUM_LENGTH_GRIDS   = 10
+ NUM_WIDTH_GRIDS    = 10
+ LENGTH_SHIFT       = 0.0
+ WIDTH_SHIFT        = 0.0
+$---------------------------------------------------------------------PARAMETERS
+[PARAMETERS]
+ MU                 =  1.0

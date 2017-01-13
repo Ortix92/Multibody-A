@@ -1,0 +1,180 @@
+[MDI_HEADER]
+FILE_TYPE                ='tir'
+FILE_VERSION             =3.0
+FILE_FORMAT              ='ASCII'
+! : TIRE_VERSION :      PAC2002
+!
+! USE_MODE specifies the type of calculation performed:
+!       0: Fz only, no Magic Formula evaluation
+!       1: Fx,My only
+!       2: Fy,Mx,Mz only
+!       3: Fx,Fy,Mx,My,Mz uncombined force/moment calculation
+!       4: Fx,Fy,Mx,My,Mz combined force/moment calculation
+!     +10: including relaxation behaviour
+!
+!
+$----------------------------------------------------------------units
+[UNITS]
+LENGTH                   ='meter'
+FORCE                    ='newton'
+ANGLE                    ='radians'
+MASS                     ='kg'
+TIME                     ='second'
+$----------------------------------------------------------------model
+[MODEL]
+PROPERTY_FILE_FORMAT     ='PAC2002'
+USE_MODE                 = 3                    $Tyre use switch (IUSED)
+VXLOW                    = 1                    
+LONGVL                   = 16.6                 $Measurement speed  
+TYRESIDE                 = 'LEFT'               $Mounted side of tyre at vehicle/test bench
+$------------------------------------------------------------dimensions
+[DIMENSION]
+UNLOADED_RADIUS          = 0.621000E+00         $typarr(   7)
+WIDTH                    = 0.429000E+00         $typarr(   8)
+RIM_RADIUS               = 0.2                  $typarr(   9)
+RIM_WIDTH                = 0.3                  $typarr(  10)
+$----------------------------------------------------------------shape
+[SHAPE]
+{radial width}
+ 1.0    0.0
+ 1.0    0.4
+ 1.0    0.9
+ 0.9    1.0
+$-------------------------------------------------------------parameter
+[VERTICAL]
+VERTICAL_STIFFNESS       = 2.0e5                $typarr(  15)
+VERTICAL_DAMPING         = 1e3                  $typarr(  16)
+BREFF                    = 0.840000E+01         $typarr(  11)
+DREFF                    = 0.270000E+00         $typarr(  12)
+FREFF                    = 0.700000E-01         $typarr(  13)
+FNOMIN                   = 1.2e4                $typarr(  14)
+$--------------------------------------------------------long_slip_range
+[LONG_SLIP_RANGE]
+KPUMIN                   = -.100000E+01         $typarr(  23)
+KPUMAX                   = 0.100000E+01         $typarr(  24)
+$---------------------------------------------------------slip_angle_range
+[SLIP_ANGLE_RANGE]
+ALPMIN                   = -.315000E+01         $typarr(  25)
+ALPMAX                   = 0.315000E+01         $typarr(  26)
+$--------------------------------------------------inclination_slip_range
+[INCLINATION_ANGLE_RANGE]
+CAMMIN                   = -.315000E+01         $typarr(  27)
+CAMMAX                   = 0.315000E+01         $typarr(  28)
+$---------------------------------------------------vertical_force_range
+[VERTICAL_FORCE_RANGE]
+FZMIN                    = 0.000000E+00         $typarr(  21)
+FZMAX                    = 4.0e6                $typarr(  22)
+$---------------------------------------------------------------scaling
+[SCALING_COEFFICIENTS]
+LFZO                     = 0.100000E+01         $typarr(  31)
+LCX                      = 0.100000E+01         $typarr(  32)
+LMUX                     = 0.100000E+01         $typarr(  33)
+LEX                      = 0.100000E+01         $typarr(  34)
+LKX                      = 0.100000E+01         $typarr(  35)
+LHX                      = 0.100000E+01         $typarr(  36)
+LVX                      = 0.100000E+01         $typarr(  37)
+LCY                      = 0.100000E+01         $typarr(  38)
+LMUY                     = 0.100000E+01         $typarr(  39)
+LEY                      = 0.100000E+01         $typarr(  40)
+LKY                      = 0.200000E+01         $typarr(  41)
+LHY                      = 0.0                  $typarr(  42)
+LVY                      = 0.0                  $typarr(  43)
+LGAY                     = 0.100000E+01         $typarr(  44)
+LTR                      = 0.100000E+01         $typarr(  45)
+LRES                     = 0.0                  $typarr(  46)
+LGAZ                     = 0.100000E+01         $typarr(  47)
+LXAL                     = 0.100000E+01         $typarr(  48)
+LYKA                     = 0.100000E+01         $typarr(  49)
+LVYKA                    = 0.100000E+01         $typarr(  50)
+LS                       = 0.100000E+01         $typarr(  51)
+LSGKP                    = 0.100000E+01         $typarr(  52)
+LSGAL                    = 0.100000E+01         $typarr(  53)
+LGYR                     = 0.100000E+01         $typarr(  54)
+$--------------------------------------------------------logitudinal
+[LONGITUDINAL_COEFFICIENTS]
+PCX1                     = 0.175757E+01         $typarr(  61)
+PDX1                     = 0.108851E+01         $typarr(  62)
+PDX2                     = -.312973E-01         $typarr(  63)
+PEX1                     = 0.551769E+00         $typarr(  64)
+PEX2                     = 0.370176E+00         $typarr(  65)
+PEX3                     = -.170140E+00         $typarr(  66)
+PEX4                     = 0.000000E+00         $typarr(  67)
+PKX1                     = 0.190610E+02         $typarr(  68)
+PKX2                     = -.466168E+00         $typarr(  69)
+PKX3                     = 0.483251E+00         $typarr(  70)
+PHX1                     = -.545000E-03         $typarr(  71)
+PHX2                     = 0.209000E-03         $typarr(  72)
+PVX1                     = 0.000000E+00         $typarr(  73)
+PVX2                     = 0.000000E+00         $typarr(  74)
+RBX1                     = 0.122428E+02         $typarr(  75)
+RBX2                     = -.997521E+01         $typarr(  76)
+RCX1                     = 0.106866E+01         $typarr(  77)
+RHX1                     = -.618958E-02         $typarr(  78)
+PTX1                     = 0.100000E+01         $typarr(  79)
+PTX2                     = 0.000000E+00         $typarr(  80)
+PTX3                     = 0.000000E+00         $typarr(  81)
+$-----------------------------------------------------------lateral
+[LATERAL_COEFFICIENTS]
+PCY1                     = 0.120328E+01         $typarr(  91)
+PDY1                     = -.107146E+01         $typarr(  92)
+PDY2                     = 0.178566E+00         $typarr(  93)
+PDY3                     = 0.278722E+01         $typarr(  94)
+PEY1                     = -.156726E+01         $typarr(  95)
+PEY2                     = -.548012E+00         $typarr(  96)
+PEY3                     = -.188264E+00         $typarr(  97)
+PEY4                     = 0.514031E+01         $typarr(  98)
+PKY1                     = -.159592E+02         $typarr(  99)
+PKY2                     = 0.161200E+01         $typarr( 100)
+PKY3                     = 0.623354E+00         $typarr( 101)
+PHY1                     = -.716805E-02         $typarr( 102)
+PHY2                     = 0.319597E-02         $typarr( 103)
+PHY3                     = -.994834E-01         $typarr( 104)
+PVY1                     = -.122314E-01         $typarr( 105)
+PVY2                     = -.606665E-03         $typarr( 106)
+PVY3                     = -.753073E+00         $typarr( 107)
+PVY4                     = 0.558202E+00         $typarr( 108)
+RBY1                     = 0.580206E+01         $typarr( 109)
+RBY2                     = 0.587349E+01         $typarr( 110)
+RBY3                     = -.716286E-02         $typarr( 111)
+RCY1                     = 0.110446E+01         $typarr( 112)
+RHY1                     = -.311875E-01         $typarr( 113)
+RVY1                     = 0.620825E-01         $typarr( 114)
+RVY2                     = -.363073E-01         $typarr( 115)
+RVY3                     = -.313050E+00         $typarr( 116)
+RVY4                     = 0.235060E+02         $typarr( 117)
+RVY5                     = 0.190000E+01         $typarr( 118)
+RVY6                     = -.520498E+01         $typarr( 119)
+PTY1                     = 0.150000E+01         $typarr( 120)
+PTY2                     = 0.200000E+01         $typarr( 121)
+$------------------------------------------------------------aligning
+[ALIGNING_COEFFICIENTS]
+QBZ1                     = 0.107807E+02         $typarr( 131)
+QBZ2                     = -.400560E+01         $typarr( 132)
+QBZ3                     = 0.184837E+01         $typarr( 133)
+QBZ4                     = 0.294563E+00         $typarr( 134)
+QBZ5                     = 0.000000E+00         $typarr( 135)
+QBZ9                     = 0.318193E+02         $typarr( 136)
+QCZ1                     = 0.123342E+01         $typarr( 137)
+QDZ1                     = 0.916462E-01         $typarr( 138)
+QDZ2                     = 0.317208E-02         $typarr( 139)
+QDZ3                     = -.458539E+00         $typarr( 140)
+QDZ4                     = 0.000000E+00         $typarr( 141)
+QDZ6                     = 0.559840E-02         $typarr( 142)
+QDZ7                     = -.915360E-02         $typarr( 143)
+QDZ8                     = 0.332951E+00         $typarr( 144)
+QDZ9                     = -.174946E+00         $typarr( 145)
+QEZ1                     = -.251151E+01         $typarr( 146)
+QEZ2                     = 0.114149E+01         $typarr( 147)
+QEZ3                     = 0.000000E+00         $typarr( 148)
+QEZ4                     = -.474070E+00         $typarr( 149)
+QEZ5                     = -.388634E+01         $typarr( 150)
+QHZ1                     = -.397677E-02         $typarr( 151)
+QHZ2                     = -.360334E-02         $typarr( 152)
+QHZ3                     = -.215809E+00         $typarr( 153)
+QHZ4                     = -.168349E+00         $typarr( 154)
+SSZ1                     = -.313609E-01         $typarr( 155)
+SSZ2                     = 0.143442E-01         $typarr( 156)
+SSZ3                     = -.655596E+00         $typarr( 157)
+SSZ4                     = 0.313881E+00         $typarr( 158)
+QTZ1                     = 0.500000E+00         $typarr( 159)
+MBELT                    = 0.100000E+02         $typarr( 160)
